@@ -11,7 +11,7 @@ public class AutorsBlogs_Service {
     private static List<Blog_Post> blogPosts;
 
     public List<Blog_Post> getBlog() {
-        return this.blogPosts;
+        return blogPosts;
     }
 
     public Blog_Post saveBlogs(Blog_Post newBlog) {

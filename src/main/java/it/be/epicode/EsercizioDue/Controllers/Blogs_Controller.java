@@ -18,14 +18,24 @@ public class Blogs_Controller {
     @GetMapping("/getExample")
     // Per contattare questo endpoint dovrò inviare una request GET a http://localhost:numerodiporta/examples/getExample
     public String getExample() {
-        return "Ciao io rispondo alle richieste GET";
+        return "Ciao io rispondo alle richieste ciao";
     }
 
-    @PostMapping("/payloadExample")
+    @PostMapping
     // POST su http://localhost:3001/examples/payloadExample (+body)
     public Blog_Post payloadExample(@RequestBody Blog_Post body) {
         System.out.println("body --> " + body);
         return body;
     }
+
+    @GetMapping
+    public List<Blog_Post> getAllUsers() {
+        return this.autorsBlogsService.getBlog();
+    }
+//
+//    @PostMapping
+//    public Blog_Post payloadExample(@RequestBody Blog_Post body) {
+//        System.out.println("body --> " + body);
+//        return this.autorsBlogsService.saveBlogs(body);    }
 
 }
