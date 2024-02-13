@@ -3,12 +3,13 @@ package it.be.epicode.EsercizioDue.Services;
 import it.be.epicode.EsercizioDue.Entities.blogPost;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 @Service
 public class AutorsBlogsService {
-    private  List<blogPost> blogPosts;
+    private  List<blogPost> blogPosts = new ArrayList<>();
 
     public List<blogPost> getBlog() {
         return this.blogPosts;
