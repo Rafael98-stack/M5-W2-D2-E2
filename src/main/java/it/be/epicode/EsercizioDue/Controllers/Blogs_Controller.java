@@ -15,16 +15,17 @@ public class Blogs_Controller {
     @Autowired
     private AutorsBlogs_Service autorsBlogsService;
 
-    @GetMapping
-    public List<Blog_Post> getAllUsers() {
-        return autorsBlogsService.getBlog();
+    @GetMapping("/getExample")
+    // Per contattare questo endpoint dovrò inviare una request GET a http://localhost:numerodiporta/examples/getExample
+    public String getExample() {
+        return "Ciao io rispondo alle richieste GET";
     }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED) // Status Code 201
-    public Blog_Post saveBlog(@RequestBody Blog_Post newBlog) {
-
-        return this.autorsBlogsService.saveBlogs(newBlog);
+    @PostMapping("/payloadExample")
+    // POST su http://localhost:3001/examples/payloadExample (+body)
+    public Blog_Post payloadExample(@RequestBody Blog_Post body) {
+        System.out.println("body --> " + body);
+        return body;
     }
 
 }
