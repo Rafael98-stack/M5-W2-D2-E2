@@ -1,27 +1,31 @@
 package it.be.epicode.EsercizioDue.Entities;
 
-import lombok.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@ToString
-@NoArgsConstructor
-public class Blog_Post {
-    private int id;
+public class blogPost {
+    private long id;
 private String categoria;
 private String titolo;
 private String cover;
 private String contenuto;
-private long tempoDiLettura;
+private int tempoDiLettura;
 
+    public blogPost() {
+    }
 
+    public blogPost(long id, String categoria, String titolo, String cover, String contenuto, int tempoDiLettura) {
+        this.id = id;
+        this.categoria = categoria;
+        this.titolo = titolo;
+        this.cover = cover;
+        this.contenuto = contenuto;
+        this.tempoDiLettura = tempoDiLettura;
+    }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -57,11 +61,11 @@ private long tempoDiLettura;
         this.contenuto = contenuto;
     }
 
-    public long getTempoDiLettura() {
+    public int getTempoDiLettura() {
         return tempoDiLettura;
     }
 
-    public void setTempoDiLettura(long tempoDiLettura) {
+    public void setTempoDiLettura(int tempoDiLettura) {
         this.tempoDiLettura = tempoDiLettura;
     }
 
